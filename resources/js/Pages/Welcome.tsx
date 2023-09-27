@@ -15,11 +15,10 @@ const Mermaid: React.FC<MermaidProps> = ({ chart }) => {
 };
 
 export default function Welcome() {
-    const [graphDefinition, setGraphDefinition] = useState<string>(`
-        graph LR;
-        A-->B;
-        B-->C;
-        B-->D[plop lanflz eknlzeknfz];
+    const [graphDefinition, setGraphDefinition] = useState<string>(`flowchart TD
+        A[Pantalla principal del gestor de trámite] --> B[Seleccionar botón nuevo trámite]
+        B --> C[Se muestra el catálogo de sistemas]
+        C --> D[Se muestran los trámites relacionados a ese sistema]
     `);
 
     const handleTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -30,15 +29,15 @@ export default function Welcome() {
         <>
             <Head title='Inicio' />
             <div className='flex w-full h-screen'>
-                <div className='flex flex-col w-4/12 bg-slate-200 dark:bg-slate-700 p-12'>
+                <div className='flex flex-col w-5/12 bg-slate-200 dark:bg-slate-700 p-4'>
                     <h1 className='text-center text-white uppercase font-bold text-2xl p-4'>Code</h1>
                     <textarea
-                        className='flex-grow overflow-auto resize-none dark:bg-slate-800 dark:text-white shadow-2xl'
+                        className='flex-grow overflow-auto resize-none dark:bg-slate-600 dark:text-white shadow-2xl text-xs'
                         value={graphDefinition}
                         onChange={handleTextAreaChange}
                     ></textarea>
                 </div>
-                <div className='w-8/12 dark:bg-slate-800 p-4'>
+                <div className='w-7/12 dark:bg-slate-600 p-8 flex justify-center h-screen w-full'>
                     <Mermaid chart={graphDefinition} />
                 </div>
             </div>
