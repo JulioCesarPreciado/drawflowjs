@@ -1,0 +1,15 @@
+{
+  "name": "drawflowjs",
+  "version": "1.0.0",
+  "description": "Application built with Express and JS to generate flow diagrams using commands. This application is based on the mermaid library.",
+  "main": "app.js",
+  "author": "Julio Preciado",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mermaid": "^10.4.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
