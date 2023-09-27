@@ -14,9 +14,14 @@
   },
   "scripts": {
     "start": "node app.js",
-    "build:css": "postcss public/css/styles.css -o public/css/output.css"
+    "build:css": "postcss public/css/styles.css -o public/css/output.css",
+    "watch:css": "postcss public/css/styles.css -o public/css/output.css --watch",
+    "browser-sync": "browser-sync start --proxy 'localhost:3000' --files 'public/css/*.css, views/*.html'",
+    "dev": "concurrently \"yarn run watch:css\" \"yarn run browser-sync\""
   },
   "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "concurrently": "^8.2.1",
     "postcss-cli": "^10.1.0"
   }
 }
